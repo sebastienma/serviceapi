@@ -1,0 +1,101 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# Service API
+
++ Service API is an api wich manage services of social backend
++ All verb are restricted to ROLE_ADMIN
+
+# Group Services
+
+** Service Resources API **
+
+## Services Collection [/service?token=zefopkezf]
+    
+### Create a Service [POST]
+
++ Creation of a service
+
++ Parameters
+
+    + token (required, string, `zefopkezf`) ... Admin's token
+
++ Request (application/json)
+
+        {
+            "title": "OFC", "version" : "1.0" 
+        }
+
++ Response 200 (application/json)
+
+        { 
+            "id": 1, "title": "OFC", "version" : "1.0"
+        }
+
+## Services [/service/{service_id}/?token=zefopkezf]
+
++ Detail of a service
+
++ Parameters
+
+    + id (required, number, `1`) ... Numeric `id` of the Service to perform action with.
+    + token (required, string, `zefopkezf`) ... Admin's token
+
+### Retrieve a Service [GET]
+
++ Response 200 (application/json)
+        
+        {
+            "id": 1, "title": "OFC", "version" : "1.0"
+        }
+
+### Remove a Service [DELETE]
+
++ Response 200 (application/json)
+
+        {
+            "result": "Service deleted"
+        }
+
+### Update a Service [PUT]
+
++ Request (application/json)
+
+        { 
+            "id":1, "title": "OFC", "version" : "1.1"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "id":1, "title": "OFC", "version" : "1.1"
+        }
+
+## Services Collection [/service/list?offset=0&count=5&token=zefopkezf]
+
+### List all service [GET]
+
++ Return all services of the component
+
++ Parameters
+
+    + token (required, string, `zefopkezf`) ... Admin's token
+    + offset (required, number, `0`) ... First element of the list
+    + count (required, number, `5`) ... Number of element for the list
+
++ Response 200 (application/json)
+
+        {
+            "data":
+                [
+                    {
+                        "id":1, "title": "OFC", "version" : "1.0"
+                    },
+                    {
+                        "id":2, "title": "buzzTV", "version" : "1.0"
+                    }
+                ],
+            "nbElt": 2,
+            "offset": 0,
+            "nbTotal": 2
+        }
