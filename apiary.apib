@@ -10,7 +10,7 @@ HOST: http://www.google.com
 
 ** Service Resources API **
 
-## Services Collection [/service?token=zefopkezf]
+## Services Collection [/service/rest/service?token=zefopkezf]
 
 ### Create a Service [POST]
 
@@ -32,7 +32,21 @@ HOST: http://www.google.com
             "id": 1, "title": "OFC", "version" : "1.0"
         }
 
-## Services [/service/{service_id}?token=zefopkezf]
+## Service by name [/service/rest/service/byname/{serviceName}]
+
+### Get a service by its name [GET]
+
++ Parameters
+
+    + serviceName (required, string, `super service`) ... The service name
+
++ Response 200 (application/json)
+
+        { 
+            "id": 1, "title": "OFC", "version" : "1.0"
+        }
+        
+## Services [/service/rest/service/{service_id}?token=zefopkezf]
 
 + Detail of a service
 
@@ -71,7 +85,7 @@ HOST: http://www.google.com
             "id":1, "title": "OFC", "version" : "1.1"
         }
 
-## Services Collection [/service/list?offset=0&count=5&token=zefopkezf]
+## Services Collection [/service/rest/service/list?offset=0&count=5&token=zefopkezf]
 
 ### List all service [GET]
 
