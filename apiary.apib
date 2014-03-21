@@ -23,13 +23,13 @@ HOST: http://www.google.com
 + Request (application/json)
 
         {
-            "title": "OFC", "version" : "1.0" 
+            "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
         }
 
 + Response 200 (application/json)
 
         { 
-            "id": 1, "title": "OFC", "version" : "1.0"
+            "id": 1, "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
         }
 
 ## Service by name [/service/rest/service/byname/{serviceName}]
@@ -43,7 +43,7 @@ HOST: http://www.google.com
 + Response 200 (application/json)
 
         { 
-            "id": 1, "title": "OFC", "version" : "1.0"
+            "id": 1, "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
         }
         
 ## Services [/service/rest/service/{service_id}?token=zefopkezf]
@@ -60,7 +60,7 @@ HOST: http://www.google.com
 + Response 200 (application/json)
         
         {
-            "id": 1, "title": "OFC", "version" : "1.0"
+            "id": 1, "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
         }
 
 ### Remove a Service [DELETE]
@@ -73,16 +73,18 @@ HOST: http://www.google.com
 
 ### Update a Service [PUT]
 
++ When updating a service, if a new data key is not unique, it will be not saved. No error will be thrown.
+
 + Request (application/json)
 
         { 
-            "id":1, "title": "OFC", "version" : "1.1"
+            "id":1, "title": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name", "avatar"]
         }
         
 + Response 200 (application/json)
 
         {
-            "id":1, "title": "OFC", "version" : "1.1"
+            "id":1, "title": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name"]
         }
 
 ## Services Collection [/service/rest/service/list?offset=0&count=5&token=zefopkezf]
