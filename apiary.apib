@@ -124,7 +124,6 @@ HOST: http://www.google.com
     + offset (required, number, `0`) ... First element of the list
     + count (required, number, `5`) ... Number of element for the list
 
-
 + Request
 
     + Headers
@@ -137,10 +136,10 @@ HOST: http://www.google.com
             "data":
                 [
                     {
-                        "id":1, "title": "OFC", "version" : "1.0"
+                        "id":1, "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
                     },
                     {
-                        "id":2, "title": "buzzTV", "version" : "1.0"
+                        "id":2, "title": "buzzTV", "version" : "1.0", uniqueDataKeys : ["email"]
                     }
                 ],
             "nbElt": 2,
