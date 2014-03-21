@@ -25,13 +25,13 @@ HOST: http://www.google.com
     + Body
     
             {
-                "name": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
+                "name": "OFC", "version" : "1.0", uniqueDataKeyList : ["email", "name"]
             }
 
 + Response 200 (application/json)
 
         { 
-            "id": 1, "name": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
+            "id": 1, "name": "OFC", "version" : "1.0", uniqueDataKeyList : ["email", "name"]
         }
 
 ## Service by name [/service/rest/service/byname/{serviceName}]
@@ -52,7 +52,7 @@ HOST: http://www.google.com
 + Response 200 (application/json)
 
         { 
-            "id": 1, "name": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
+            "id": 1, "name": "OFC", "version" : "1.0", uniqueDataKeyList : ["email", "name"]
         }
         
 ## Services [/service/rest/service/{service_id}]
@@ -74,7 +74,7 @@ HOST: http://www.google.com
 + Response 200 (application/json)
         
         {
-            "id": 1, "name": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
+            "id": 1, "name": "OFC", "version" : "1.0", uniqueDataKeyList : ["email", "name"]
         }
 
 ### Remove a Service [DELETE]
@@ -104,13 +104,13 @@ HOST: http://www.google.com
     + Body
 
             { 
-                "id":1, "name": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name", "avatar"]
+                "id":1, "name": "OFC", "version" : "1.1", uniqueDataKeyList : ["email", "name", "avatar"]
             }
         
 + Response 200 (application/json)
 
         {
-            "id":1, "name": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name"]
+            "id":1, "name": "OFC", "version" : "1.1", uniqueDataKeyList : ["email", "name"]
         }
 
 ## Services Collection [/service/rest/service/list?offset=0&count=5]
@@ -136,10 +136,10 @@ HOST: http://www.google.com
             "data":
                 [
                     {
-                        "id":1, "name": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
+                        "id":1, "name": "OFC", "version" : "1.0", uniqueDataKeyList : ["email", "name"]
                     },
                     {
-                        "id":2, "name": "buzzTV", "version" : "1.0", uniqueDataKeys : ["email"]
+                        "id":2, "name": "buzzTV", "version" : "1.0", uniqueDataKeyList : ["email"]
                     }
                 ],
             "nbElt": 2,
