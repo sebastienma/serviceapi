@@ -10,21 +10,23 @@ HOST: http://www.google.com
 
 ** Service Resources API **
 
-## Services Collection [/service/rest/service?token=zefopkezf]
+## Services Collection [/service/rest/service]
 
 ### Create a Service [POST]
 
 + Creation of a service
 
-+ Parameters
-
-    + token (required, string, `zefopkezf`) ... Admin's token
-
 + Request (application/json)
 
-        {
-            "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
-        }
+    + Headers
+    
+            token: the token of the currently connected user
+
+    + Body
+    
+            {
+                "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
+            }
 
 + Response 200 (application/json)
 
@@ -40,23 +42,35 @@ HOST: http://www.google.com
 
     + serviceName (required, string, `super service`) ... The service name
 
+
++ Request
+
+    + Headers
+    
+            token: the token of the currently connected user
+           
 + Response 200 (application/json)
 
         { 
             "id": 1, "title": "OFC", "version" : "1.0", uniqueDataKeys : ["email", "name"]
         }
         
-## Services [/service/rest/service/{service_id}?token=zefopkezf]
+## Services [/service/rest/service/{service_id}]
 
 + Detail of a service
 
 + Parameters
 
     + id (required, number, `1`) ... Numeric `id` of the Service to perform action with.
-    + token (required, string, `zefopkezf`) ... Admin's token
 
 ### Retrieve a Service [GET]
 
++ Request
+
+    + Headers
+    
+            token: the token of the currently connected user
+           
 + Response 200 (application/json)
         
         {
@@ -65,6 +79,12 @@ HOST: http://www.google.com
 
 ### Remove a Service [DELETE]
 
++ Request
+
+    + Headers
+    
+            token: the token of the currently connected user
+           
 + Response 200 (application/json)
 
         {
@@ -77,9 +97,15 @@ HOST: http://www.google.com
 
 + Request (application/json)
 
-        { 
-            "id":1, "title": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name", "avatar"]
-        }
+    + Headers
+    
+            token: the token of the currently connected user
+           
+    + Body
+
+            { 
+                "id":1, "title": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name", "avatar"]
+            }
         
 + Response 200 (application/json)
 
@@ -87,7 +113,7 @@ HOST: http://www.google.com
             "id":1, "title": "OFC", "version" : "1.1", uniqueDataKeys : ["email", "name"]
         }
 
-## Services Collection [/service/rest/service/list?offset=0&count=5&token=zefopkezf]
+## Services Collection [/service/rest/service/list?offset=0&count=5]
 
 ### List all service [GET]
 
@@ -95,10 +121,16 @@ HOST: http://www.google.com
 
 + Parameters
 
-    + token (required, string, `zefopkezf`) ... Admin's token
     + offset (required, number, `0`) ... First element of the list
     + count (required, number, `5`) ... Number of element for the list
 
+
++ Request
+
+    + Headers
+    
+            token: the token of the currently connected user
+           
 + Response 200 (application/json)
 
         {
