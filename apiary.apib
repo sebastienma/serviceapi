@@ -6,6 +6,7 @@ HOST: http://www.google.com
 + Manage all services of SocialAPI backend
 + All verbs are restricted to ROLE_SUPERVISOR
 
+
 # Group Services
 
 ** Service Resources API **
@@ -145,6 +146,22 @@ HOST: http://www.google.com
             "nbElt": 2,
             "offset": 0,
             "nbTotal": 2
+        }
+
+# Group Admin
+
+Aministration verbs
+
+## Status [/status]
+
+### Live test [GET]
+
++ Know if api is alive
+    
++ Response 200 (application/json)
+
+        {
+            "result" : "OK"
         }
         
 ## Service Administration [/service/rest/admin/service]
